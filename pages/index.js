@@ -21,20 +21,25 @@ const Demo = () => {
   return (
     <div>
       <Header email={AuthUser.email} signOut={AuthUser.signOut} />
+      
       <div style={styles.content}>
         <div style={styles.infoTextContainer}>
-          <h3>Home</h3>
-          <p>
-            This page does not require authentication, so it won't redirect to
-            the login page if you are not signed in.
-          </p>
-          <p>
-            If you remove `getServerSideProps` from this page, it will be static
-            and load the authed user only on the client side.
-          </p>
-          <a href="/todo" style={{ fontSize: "40px", textDecoration: 'underline' }}>Add a todo!</a>
+          <h1 style={{ fontSize: "40px", textAlign: 'center'}}>Home</h1>
+            <div className="container">
+            <div className="row text-center">
+              <div className="col, col-md">
+                <a href="/todo" style={{ fontSize: "20px", textDecoration: 'underline' }}>Add a todo!</a>
+              </div>
+              <div className="col, col-md">  
+                <a href="/event" style={{ fontSize: "20px", textDecoration: 'underline' }}>Add an event!</a>
+              </div>
+              <div className="col, col-md">  
+                <a href="/contacts" style={{ fontSize: "20px", textDecoration: 'underline' }}>Add a contact!</a>
+              </div>
+            </div>
+            </div>
         </div>
-        <DemoPageLinks />
+       
       </div>
     </div>
   )

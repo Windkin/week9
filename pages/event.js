@@ -32,7 +32,7 @@ const Event = () => {
         AuthUser.id &&
             firebase
                 .firestore()
-                .collection("todo")
+                .collection("events")
                 .where( 'user', '==', AuthUser.id )
                 .onSnapshot(
                   snapshot => {
